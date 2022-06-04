@@ -14,12 +14,12 @@ use App\Http\Controllers\ComponentTestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('user.dashboard');
+})->middleware(['auth:users'])->name('dashboard');
 
 Route::get('/components1', [ComponentTestController::class, 'show1']);
 Route::get('/components2', [ComponentTestController::class, 'show2']);
